@@ -64,9 +64,27 @@ export default function Home() {
           </datalist>
 
           <div className="p-5">
+            {/* <div onClick={() => setSubsearchHidden(false)} className="cursor-pointer m-1 pointer-events-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">What would you like to report?</div> */}
+            <form>
             <input type="text" list="gtfscache" placeholder="Search Route or Station" className="m-1 pointer-events-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></input>
             <input type="text" placeholder="Select a Time (optional)" className="m-1 pointer-events-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></input>
-            <div onClick={() => setSubsearchHidden(false)} className="cursor-pointer m-1 pointer-events-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">What would you like to report?</div>
+
+            <select name="Categories" id="categories" className="m-1 pointer-events-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-50">
+
+            <option value="Capacity" >Capacity</option>
+            <option value="Cleanliness" >Cleanliness or Hazardous Materials</option>
+            <option value="Safety" >Safety</option>
+            <option value="Reliability" >Reliability & Delays</option>
+            <option value="Accessibility" >Accessibility</option>
+            <option value="Infastructure" >Infrastructure or Maintenance</option>
+            <option value="Communication" >Customer Service and Communication</option>
+            <option value="Coverage" >Service Coverage & Convenience</option>
+            <option value="Other" >Other feedback</option>
+            </select>
+            <button onClick={() => {
+              fetch('api/query/zqiAJ3BUOBlOsPygD2kZ/2025-03-01:14:00:00/15').then(x => x);
+            }} className="m-1 pointer-events-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-500 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-50">Submit</button>
+            </form>
           </div>
         </div>
         <div id="map" className="w-full h-full absolute -z-99">
