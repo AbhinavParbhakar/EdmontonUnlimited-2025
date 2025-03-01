@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image";
 import Map from "@/app/components/map";
 import { useState } from "react";
 
