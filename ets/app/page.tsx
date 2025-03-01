@@ -15,6 +15,7 @@ interface Resp {
 
 export function unpackDatalist(data: Resp | null) {
   if(data) {
+    console.log("WORKING");
     return data.dat.map(x => {
       return (<option key={x.number}>{x.number}</option>)
     })
