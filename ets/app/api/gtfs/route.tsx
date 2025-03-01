@@ -13,7 +13,7 @@ export async function GET(){
 
     const arrays : Array<DocumentData> = []
     querySnapshot.forEach((doc)=>{
-        arrays.push({...doc.data()})
+        arrays.push({...doc.data(),'id':doc.id})
     })
 
     return NextResponse.json({'Response':arrays})
