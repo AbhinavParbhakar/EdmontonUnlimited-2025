@@ -10,7 +10,7 @@ interface GTFSCacheDat {
 }
 
 interface Resp {
-  dat: Array<GTFSCacheDat> 
+  Response: Array<GTFSCacheDat> 
 }
 
 function unpackDatalist(data: Resp | null) {
@@ -20,7 +20,7 @@ function unpackDatalist(data: Resp | null) {
     return (<datalist id="gtfscache">
       {
       
-          data.dat.map(x => {
+          data.Response.map(x => {
             return (<option key={x.number}>{x.number}</option>)
           })
 
