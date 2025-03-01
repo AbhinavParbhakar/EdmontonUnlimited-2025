@@ -3,10 +3,10 @@ import Map from "@/app/components/map";
 import { Dispatch, SetStateAction, useState } from "react";
 
 interface GTFSCacheDat {
-  shape: String,
-  name: String,
-  number: String,
-  id: String,
+  shape: string,
+  name: string,
+  number: string,
+  id: string,
 }
 
 interface Resp {
@@ -16,7 +16,7 @@ interface Resp {
 export function unpackDatalist(data: Resp | null) {
   if(data) {
     return data.dat.map(x => {
-      return (<option>{x.number}</option>)
+      return (<option key={x.number}>{x.number}</option>)
     })
   }
 }
