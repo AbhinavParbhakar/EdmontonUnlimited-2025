@@ -25,7 +25,7 @@ export function unpackDatalist(data: Resp | null) {
 export default function Home() {
 
   const [gtfscache, setCache] : [Resp | null, Dispatch<SetStateAction<null>>]= useState(null);
-  fetch("http://crossorigin.me/https://edmonton-unlimited-2025.vercel.app/api/gtfs").then(x => {
+  fetch("https://edmonton-unlimited-2025.vercel.app/api/gtfs").then(x => {
     x.json().then(y => setCache(y));
   });
   const hiddenSubsearchClass = "-z-97 absolute w-full h-0 pointer-events-none hidden"
