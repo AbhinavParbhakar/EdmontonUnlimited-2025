@@ -8,11 +8,6 @@ interface routeMessage {
     number : string
 }
 
-interface routeReturnMessage extends DocumentData{
-    name : string,
-    number : string
-}
-
 export async function GET(){
     const querySnapshot = await getDocs(routeCollection)
 
@@ -27,7 +22,7 @@ export async function GET(){
 export async function POST(request:Request){
     const message : routeMessage = await request.json()
 
-    const routeDocRef = await addDoc(routeCollection,message)
+    await addDoc(routeCollection,message)
 
     return NextResponse.json({'Message':'All good'})
 }

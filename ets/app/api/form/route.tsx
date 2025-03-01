@@ -1,6 +1,6 @@
 import {NextResponse } from 'next/server';
-import { postCollection,detailCollection,routeCollection } from '../firestore/config';
-import { addDoc, Timestamp, GeoPoint, query, getDocs } from 'firebase/firestore';
+import { postCollection,detailCollection} from '../firestore/config';
+import { addDoc, Timestamp, GeoPoint} from 'firebase/firestore';
 
 
 interface ComplaintInterface{
@@ -42,9 +42,6 @@ export async function POST(request:Request){
         detailFK : detailDocRef.id,
         routeFK : message.routeID
     }
-
-    
-    const postDocRef = await addDoc(postCollection,postInfo)
-
+    await addDoc(postCollection,postInfo)
     return NextResponse.json({'Message:' : "Form Info added"})
 }
