@@ -1,7 +1,6 @@
 "use client"
 import Map from "@/app/components/map";
 import { Dispatch, SetStateAction, useState } from "react";
-import { getDat } from "./components/searchBar";
 
 interface GTFSCacheDat {
   shape: String,
