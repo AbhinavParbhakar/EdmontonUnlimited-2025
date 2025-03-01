@@ -8,11 +8,11 @@ import { useEffect, useRef } from "react";
 // Setting the Mapbox access token from the environment variable
 // Make sure to add your Mapbox API key in the .env.local file like this:
 // NEXT_PUBLIC_MAPBOX_API_KEY=your-mapbox-access-token
-// if (!process.env.NEXT_PUBLIC_MAPBOX_API_KEY) {
-//     throw new Error("Mapbox API key is not defined in the environment variables.");
-// }
+if (!process.env.NEXT_PUBLIC_MAPBOX_API_KEY) {
+    throw new Error("Mapbox API key is not defined in the environment variables.");
+}
 
-mapboxgl.accessToken = "pk.eyJ1IjoidXJiaXp0b24iLCJhIjoiY2xsZTZvaXd0MGc4MjNzbmdseWNjM213eiJ9.z1YeFXYSbaMe93SMT6muVg";
+mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_API_KEY;
 
 const Map = () => {
     // Reference to the map container in the DOM
