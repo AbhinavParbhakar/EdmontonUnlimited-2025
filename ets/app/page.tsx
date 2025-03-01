@@ -1,21 +1,20 @@
 import Image from "next/image";
 import Map from "@/app/components/map";
+import { useState } from "react";
 
-const dummy = ["ksdjfklsdf", "sjhksdajkdshkj"];
 function getData() {
-  // return dummy 
   return (<option>lol</option>);
 }
 
-function subsearchOverlayStyle() {
-  return "-z-97 absolute w-full h-25 pointer-events-none"
-}
+const hiddenSubsearchClass = "-z-97 absolute w-full h-25 pointer-events-none hidden"
+const shownSubsearchClass = "-z-97 absolute w-full h-25 pointer-events-auto"
+const [subsearchIsHidden, setSubsearchHidden] = useState(true);
 
 export default function Home() {
   return (
     <div className="place-content-center">
 
-        <div id="subsearch-overlay" className={subsearchOverlayStyle()}>
+        <div id="subsearch-overlay" className={subsearchIsHidden ? hiddenSubsearchClass : shownSubsearchClass }>
           AAAAA
         </div>
         <div id="main-overlay" className="-z-98 absolute w-full h-25 pointer-events-none backdrop-blur-xs">
