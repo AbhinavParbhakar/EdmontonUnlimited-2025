@@ -13,7 +13,6 @@ interface PostInterface {
 
 export async function GET(request:Request){
     const params = request.url.split('/')
-    const routeId = params[params.length - 3]
     const startTime = new Date(params[params.length - 2])
     const timeJump = parseInt(params[params.length - 1],10)
     const endTime = new Date(startTime.getTime() + timeJump * 60000)
