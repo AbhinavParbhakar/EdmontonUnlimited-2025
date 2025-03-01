@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
-import { routeCollection,detailCollection,postCollection } from "../../firestore/config"
-import {query,where, Timestamp, getDocs, GeoPoint, doc, getDoc, QueryDocumentSnapshot, DocumentData} from 'firebase/firestore'
+import { detailCollection,postCollection } from "../../firestore/config"
+import {query,where, Timestamp, getDocs, GeoPoint, doc, getDoc,} from 'firebase/firestore'
 
 interface PostInterface {
     timestamp: Timestamp,
@@ -10,11 +10,6 @@ interface PostInterface {
     routeFK : string
 }
 
-interface routeMessage {
-    shape : string,
-    name : string,
-    number : string
-}
 
 export async function GET(request:Request){
     const params = request.url.split('/')
@@ -28,7 +23,7 @@ export async function GET(request:Request){
 
     const querySnapshot = await getDocs(q)
 
-    let results = []
+    const results = []
 
     for (const doci of querySnapshot.docs) {
         // Type assertion to PostInterface and adding post_id
