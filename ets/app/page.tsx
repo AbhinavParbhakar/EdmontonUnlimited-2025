@@ -13,7 +13,7 @@ interface Resp {
   dat: Array<GTFSCacheDat> 
 }
 
-export function unpackDatalist(data: Resp | null) {
+function unpackDatalist(data: Resp | null) {
   if(data) {
     console.log("WORKING");
 
