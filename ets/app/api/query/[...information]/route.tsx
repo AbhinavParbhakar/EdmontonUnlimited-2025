@@ -19,7 +19,7 @@ export async function GET(request:Request){
     const endTime = new Date(startTime.getTime() + timeJump * 60000)
 
 
-    const q = query(postCollection,where('timestamp','>=',startTime),where('timestamp',"<=",endTime),where('routeFK','==',routeId))
+    const q = query(postCollection,where('timestamp','>=',startTime),where('timestamp',"<=",endTime))
 
     const querySnapshot = await getDocs(q)
 
