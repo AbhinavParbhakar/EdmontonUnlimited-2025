@@ -22,7 +22,6 @@ export default function Home() {
             {
               getData()
             }
-
           </datalist>
 
           <div className="p-5">
